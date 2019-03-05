@@ -45,7 +45,7 @@ const AppNavigator = createStackNavigator({
     screen: Home
   },
 
-//User/////////////////////////////////
+//User//////////////안녕///////////////////
 
   userLogin: {
     screen: UserLogin,
