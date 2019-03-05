@@ -30,22 +30,17 @@ import Home from "./components/Home";
 import UserMain from "./User/UserMain";
 import UserLogin from "./User/UserLogin";
 import UserRegister from "./User/UserRegister";
-import UserQuery from "./User/UserQuery"; 
-import Test from "./User/Test"; 
+import UserQuery from "./User/UserQuery";
+import Test from "./User/Test";
 
-import {
-  createStackNavigator,
-  createAppContainer,
-} from "react-navigation";
-
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const AppNavigator = createStackNavigator({
-
-  Home: { 
+  Home: {
     screen: Home
   },
 
-//User//////////////안녕///////////////////
+  //User/////////////////////////////////
 
   userLogin: {
     screen: UserLogin,
@@ -53,7 +48,7 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
-  userdog: { 
+  userdog: {
     screen: UserMain
   },
   userregister: {
@@ -63,7 +58,7 @@ const AppNavigator = createStackNavigator({
     screen: UserQuery
   },
 
-//Org/////////////////////////////////
+  //Org/////////////////////////////////
 
   orgLogin: {
     screen: OrgLogin,
@@ -105,7 +100,7 @@ const AppNavigator = createStackNavigator({
     screen: Org3Search
   },
 
-//invoke//////////////////////////////
+  //invoke//////////////////////////////
 
   invokehealthcare: {
     screen: Invokehealthcare
@@ -123,7 +118,7 @@ const AppNavigator = createStackNavigator({
     screen: Invokesales
   },
 
-//query///////////////////////////////
+  //query///////////////////////////////
 
   queryhealthcare: {
     screen: Queryhealthcare
@@ -153,7 +148,7 @@ const AppNavigator = createStackNavigator({
     screen: Querysalesuser
   },
 
-//document///////////////////////////////////
+  //document///////////////////////////////////
   medicalcertificate: {
     screen: Medicalcertificate,
     navigationOptions: {
@@ -169,4 +164,3 @@ const AppNavigator = createStackNavigator({
 });
 
 export default createAppContainer(AppNavigator);
-
