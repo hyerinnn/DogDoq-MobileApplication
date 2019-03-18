@@ -1,2 +1,2 @@
- DogDoq 모바일 어플리케이션
-### 개요
+
+![React-Native](https://img.shields.io/badge/React--Native-0.57.1-blue.svg)
