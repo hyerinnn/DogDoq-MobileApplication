@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  Image,
-  Dimensions
-} from "react-native";
+import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
 import ImageTextInput from "../components/ImageTextInput";
 import RoundButton from "../components/RoundButton";
 import { CheckBox } from "react-native-elements";
@@ -26,7 +20,7 @@ export default class OrgLogin extends React.Component {
     };
   }
   LoginUser() {
-    return fetch("http://192.168.43.166:3001/api/login", {
+    return fetch("http://192.168.43.185:3001/api/login", {
       method: "POST",
       body: JSON.stringify({
         ...this.state.data
@@ -43,14 +37,17 @@ export default class OrgLogin extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.logo} source={require('../assets/images/icLogo3.png')} />
+        <Image
+          style={styles.logo}
+          source={require("../assets/images/icLogo3.png")}
+        />
         <View style={styles.checkContainer}>
           <CheckBox
             containerStyle={{
               backgroundColor: "white",
-              borderColor: "white",
+              borderColor: "white"
             }}
-            textStyle={{color: "#9a6618"}}
+            textStyle={{ color: "#9a6618" }}
             uncheckedColor="#9a6618"
             checkedColor="#9a6618"
             title="펫샵"
@@ -72,7 +69,7 @@ export default class OrgLogin extends React.Component {
           <CheckBox
             containerStyle={{
               backgroundColor: "white",
-              borderColor: "white",
+              borderColor: "white"
             }}
             title="농장"
             textStyle={{ color: "#9a6618" }}
@@ -96,7 +93,7 @@ export default class OrgLogin extends React.Component {
           <CheckBox
             containerStyle={{
               backgroundColor: "white",
-              borderColor: "white"             
+              borderColor: "white"
             }}
             style={styles.text}
             title="병원"
@@ -121,7 +118,7 @@ export default class OrgLogin extends React.Component {
         </View>
         <View style={styles.inputContainer}>
           <ImageTextInput
-            image={require('../assets/images/icUser2x.png')}
+            image={require("../assets/images/icUser2x.png")}
             width="100%"
             placeholder=" ID "
             conatinerStyle={{ marginBottom: 13 }}
@@ -135,7 +132,7 @@ export default class OrgLogin extends React.Component {
             }}
           />
           <ImageTextInput
-            image={require('../assets/images/icPassword2x.png')}
+            image={require("../assets/images/icPassword2x.png")}
             width="100%"
             placeholder=" PASSWORD  "
             onChange={text => {
@@ -146,13 +143,13 @@ export default class OrgLogin extends React.Component {
                 }
               });
             }}
-          />          
+          />
         </View>
         <View style={styles.buttonContainer}>
           <RoundButton
             title={"Log in"}
             styleContainer={{
-              width: '100%',
+              width: "100%"
             }}
             onPress={() => {
               this.LoginUser().then(result => {
@@ -171,7 +168,7 @@ export default class OrgLogin extends React.Component {
             title={"Sign Up"}
             styleContainer={{
               marginTop: 13,
-              width: '100%',
+              width: "100%",
               backgroundColor: "#a38686"
             }}
             onPress={() => this.props.navigation.navigate("orgregister")}
@@ -185,12 +182,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "flex-start"
   },
   logo: {
     width: width * 0.6,
     height: height * 0.375,
-    top: "3%",
+    top: "3%"
   },
   checkContainer: {
     top: "8%",
@@ -204,7 +201,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     top: "15%",
-    width: '90%',
-    alignItems: 'center',
+    width: "90%",
+    alignItems: "center"
   }
 });

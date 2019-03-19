@@ -103,7 +103,7 @@ export default class UserQuery extends React.Component {
   }
   queryHealth() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/query",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/query",
       {
         method: "POST",
         body: JSON.stringify({
@@ -121,7 +121,7 @@ export default class UserQuery extends React.Component {
   }
   queryMedical() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/query",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/query",
       {
         method: "POST",
         body: JSON.stringify({
@@ -139,7 +139,7 @@ export default class UserQuery extends React.Component {
   }
   queryBirth() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/query",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/query",
       {
         method: "POST",
         body: JSON.stringify({
@@ -157,7 +157,7 @@ export default class UserQuery extends React.Component {
   }
   querySales() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/query",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/query",
       {
         method: "POST",
         body: JSON.stringify({
@@ -176,11 +176,9 @@ export default class UserQuery extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerStyle: {
-        backgroundColor: '#f1cf81'
+        backgroundColor: "#f1cf81"
       },
-      headerLeft: (
-        <View></View>
-      ),
+      headerLeft: <View />,
       headerTitle: (
         <TouchableOpacity
           style={{
@@ -189,12 +187,12 @@ export default class UserQuery extends React.Component {
             justifyContent: "center"
           }}
         >
-          <Text style={{ fontSize: 20, color: '#fff', fontWeight: "bold" }} >DOGDOQ</Text>
+          <Text style={{ fontSize: 20, color: "#fff", fontWeight: "bold" }}>
+            DOGDOQ
+          </Text>
         </TouchableOpacity>
       ),
-      headerRight: (
-        <View></View>
-      ),
+      headerRight: <View />
     };
   };
   render() {
@@ -237,82 +235,82 @@ export default class UserQuery extends React.Component {
       <View style={styles.container}>
         <FlatList
           contentContainerStyle={styles.flatcontainer}
-            data={this.state.data}
-            renderItem={({ item, index }) => (
-              <DocumentElement
-                name={item.name}
-                fontSize={20}
-                IconName={item.icon}
-                onPress={() => {
-                  if (item.key == "a") {
-                    this.queryHealth()
-                      .then(result => {
-                        this.setState({
-                          Data: result
-                        });
+          data={this.state.data}
+          renderItem={({ item, index }) => (
+            <DocumentElement
+              name={item.name}
+              fontSize={20}
+              IconName={item.icon}
+              onPress={() => {
+                if (item.key == "a") {
+                  this.queryHealth()
+                    .then(result => {
+                      this.setState({
+                        Data: result
+                      });
+                    })
+                    .then(() =>
+                      this.props.navigation.navigate(item.navigation, {
+                        org: org,
+                        email: email,
+                        dogId: dogId,
+                        data: this.state.Data
                       })
-                      .then(() =>
-                        this.props.navigation.navigate(item.navigation, {
-                          org: org,
-                          email: email,
-                          dogId: dogId,
-                          data: this.state.Data
-                        })
-                      );
-                  } else if (item.key == "b") {
-                    this.queryMedical()
-                      .then(result => {
-                        this.setState({
-                          Data: result
-                        });
+                    );
+                } else if (item.key == "b") {
+                  this.queryMedical()
+                    .then(result => {
+                      this.setState({
+                        Data: result
+                      });
+                    })
+                    .then(() =>
+                      this.props.navigation.navigate(item.navigation, {
+                        org: org,
+                        email: email,
+                        dogId: dogId,
+                        data: this.state.Data
                       })
-                      .then(() =>
-                        this.props.navigation.navigate(item.navigation, {
-                          org: org,
-                          email: email,
-                          dogId: dogId,
-                          data: this.state.Data
-                        })
-                      );
-                  } else if (item.key == "c") {
-                    this.queryBirth()
-                      .then(result => {
-                        this.setState({
-                          Data: result
-                        });
+                    );
+                } else if (item.key == "c") {
+                  this.queryBirth()
+                    .then(result => {
+                      this.setState({
+                        Data: result
+                      });
+                    })
+                    .then(() =>
+                      this.props.navigation.navigate(item.navigation, {
+                        org: org,
+                        email: email,
+                        dogId: dogId,
+                        data: this.state.Data
                       })
-                      .then(() =>
-                        this.props.navigation.navigate(item.navigation, {
-                          org: org,
-                          email: email,
-                          dogId: dogId,
-                          data: this.state.Data
-                        })
-                      );
-                  } else if (item.key == "d") {
-                    this.querySales()
-                      .then(result => {
-                        this.setState({
-                          Data: result
-                        });
+                    );
+                } else if (item.key == "d") {
+                  this.querySales()
+                    .then(result => {
+                      this.setState({
+                        Data: result
+                      });
+                    })
+                    .then(() =>
+                      this.props.navigation.navigate(item.navigation, {
+                        org: org,
+                        email: email,
+                        dogId: dogId,
+                        data: this.state.Data
                       })
-                      .then(() =>
-                        this.props.navigation.navigate(item.navigation, {
-                          org: org,
-                          email: email,
-                          dogId: dogId,
-                          data: this.state.Data
-                        })
-                      );
-                  } else {
-                    alert("준비중");
-                    this.props.navigation.navigate("userdog");
-                  }
-                }}
-                key={index}
-              />
-            )}
-          />
+                    );
+                } else {
+                  alert("준비중");
+                  this.props.navigation.navigate("userdog");
+                }
+              }}
+              key={index}
+            />
+          )}
+        />
       </View>
     );
   }
@@ -330,6 +328,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: width
-  },
-
+  }
 });

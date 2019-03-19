@@ -138,7 +138,7 @@ export default class InvokeContract extends React.Component {
   }
   invokeContract() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/invoke",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/invoke",
       {
         method: "POST",
         body: JSON.stringify({
@@ -156,11 +156,9 @@ export default class InvokeContract extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerStyle: {
-        backgroundColor: '#f1cf81'
+        backgroundColor: "#f1cf81"
       },
-      headerLeft: (
-        <View></View>
-      ),
+      headerLeft: <View />,
       headerTitle: (
         <TouchableOpacity
           style={{
@@ -169,12 +167,12 @@ export default class InvokeContract extends React.Component {
             justifyContent: "center"
           }}
         >
-          <Text style={{ fontSize: 20, color: '#fff', fontWeight: "bold" }} >DOGDOQ</Text>
+          <Text style={{ fontSize: 20, color: "#fff", fontWeight: "bold" }}>
+            DOGDOQ
+          </Text>
         </TouchableOpacity>
       ),
-      headerRight: (
-        <View></View>
-      ),
+      headerRight: <View />
     };
   };
   render() {
@@ -285,7 +283,7 @@ const styles = StyleSheet.create({
   },
   question: {
     width: "27%",
-    alignItems: "center",
+    alignItems: "center"
   },
   buttonView: {
     flex: 1,
@@ -298,7 +296,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 20
-
   },
   buttonConfirm: {
     borderRadius: 10,

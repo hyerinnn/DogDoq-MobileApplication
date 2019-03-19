@@ -12,12 +12,6 @@ import {
   FlatList,
   Image
 } from "react-native";
-import {
-  Foundation,
-  MaterialCommunityIcons,
-  Entypo,
-  AntDesign
-} from "@expo/vector-icons";
 
 import DocumentElement from "../components/DocumentElement";
 

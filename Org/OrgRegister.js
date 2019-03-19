@@ -29,7 +29,7 @@ export default class OrgRegister extends React.Component {
   }
 
   RegisterUser() {
-    return fetch("http://192.168.43.166:3001/api/register", {
+    return fetch("http://192.168.43.185:3001/api/register", {
       method: "POST",
       body: JSON.stringify({
         ...this.state.data
@@ -45,11 +45,9 @@ export default class OrgRegister extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerStyle: {
-        backgroundColor: '#f1cf81'
+        backgroundColor: "#f1cf81"
       },
-      headerLeft: (
-        <View></View>
-      ),
+      headerLeft: <View />,
       headerTitle: (
         <TouchableOpacity
           style={{
@@ -58,24 +56,27 @@ export default class OrgRegister extends React.Component {
             justifyContent: "center"
           }}
         >
-          <Text style={{ fontSize: 20, color: '#fff', fontWeight: "bold" }} >DOGDOQ</Text>
+          <Text style={{ fontSize: 20, color: "#fff", fontWeight: "bold" }}>
+            DOGDOQ
+          </Text>
         </TouchableOpacity>
       ),
-      headerRight: (
-        <View></View>
-      ),
+      headerRight: <View />
     };
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.logo} source={require('../assets/images/icLogo3.png')} />
+        <Image
+          style={styles.logo}
+          source={require("../assets/images/icLogo3.png")}
+        />
         <View style={styles.checkContainer}>
           <CheckBox
             containerStyle={{
               backgroundColor: "white",
-              borderColor: "white",
+              borderColor: "white"
             }}
             textStyle={{ color: "#9a6618" }}
             uncheckedColor="#9a6618"
@@ -99,7 +100,7 @@ export default class OrgRegister extends React.Component {
           <CheckBox
             containerStyle={{
               backgroundColor: "white",
-              borderColor: "white",
+              borderColor: "white"
             }}
             title="농장"
             textStyle={{ color: "#9a6618" }}
@@ -148,7 +149,7 @@ export default class OrgRegister extends React.Component {
         </View>
         <View style={styles.inputContainer}>
           <ImageTextInput
-            image={require('../assets/images/icUser2x.png')}
+            image={require("../assets/images/icUser2x.png")}
             width="100%"
             placeholder=" ID "
             conatinerStyle={{ marginBottom: 13 }}
@@ -162,7 +163,7 @@ export default class OrgRegister extends React.Component {
             }}
           />
           <ImageTextInput
-            image={require('../assets/images/icPassword2x.png')}
+            image={require("../assets/images/icPassword2x.png")}
             width="100%"
             placeholder=" PASSWORD  "
             onChange={text => {
@@ -179,7 +180,7 @@ export default class OrgRegister extends React.Component {
           <RoundButton
             title={"가입하기"}
             styleContainer={{
-              width: '100%',
+              width: "100%",
               backgroundColor: "#a38686"
             }}
             onPress={() => {
@@ -202,12 +203,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "flex-start"
   },
   logo: {
     width: width * 0.6,
     height: height * 0.375,
-    top: "3%",
+    top: "3%"
   },
   checkContainer: {
     top: "8%",
@@ -221,8 +222,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     top: "17%",
-    width: '90%',
-    alignItems: 'center',
+    width: "90%",
+    alignItems: "center"
   }
 });
-

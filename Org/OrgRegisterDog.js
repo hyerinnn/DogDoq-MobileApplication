@@ -5,7 +5,7 @@ import {
   View,
   TouchableOpacity,
   Image,
-  Dimensions,
+  Dimensions
 } from "react-native";
 import uuidv1 from "uuid/v1";
 import ImageTextInput from "../components/ImageTextInput";
@@ -42,7 +42,7 @@ export default class OrgRegisterDog extends React.Component {
     }
   }
   RegisterDog() {
-    return fetch("http://192.168.43.166:3001/api/dog", {
+    return fetch("http://192.168.43.185:3001/api/dog", {
       method: "POST",
       body: JSON.stringify({
         ...this.state.json
@@ -56,7 +56,7 @@ export default class OrgRegisterDog extends React.Component {
       .then(_bodyInit => JSON.parse(_bodyInit).code);
   }
   allDog() {
-    return fetch("http://192.168.43.166:3001/api/alldog", {
+    return fetch("http://192.168.43.185:3001/api/alldog", {
       method: "POST",
       body: JSON.stringify({}),
       headers: {
@@ -71,11 +71,9 @@ export default class OrgRegisterDog extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerStyle: {
-        backgroundColor: '#fff'
+        backgroundColor: "#fff"
       },
-      headerLeft: (
-        <View></View>
-      ),
+      headerLeft: <View />,
       headerTitle: (
         <TouchableOpacity
           style={{
@@ -84,15 +82,15 @@ export default class OrgRegisterDog extends React.Component {
             justifyContent: "center"
           }}
           onPress={() => {
-            _this.openControlPanel()
+            _this.openControlPanel();
           }}
         >
-          <Text style={{ fontSize: 20, color: '#785A5A', fontWeight: "bold" }} >DOGDOQ</Text>
+          <Text style={{ fontSize: 20, color: "#785A5A", fontWeight: "bold" }}>
+            DOGDOQ
+          </Text>
         </TouchableOpacity>
       ),
-      headerRight: (
-        <View></View>
-      ),
+      headerRight: <View />
     };
   };
   async componentWillMount() {
@@ -101,10 +99,13 @@ export default class OrgRegisterDog extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.logo} source={require('../assets/images/image2x.png')} />
+        <Image
+          style={styles.logo}
+          source={require("../assets/images/image2x.png")}
+        />
         <View style={styles.inputContainer}>
           <ImageTextInput
-            image={require('../assets/images/icId2x.png')}
+            image={require("../assets/images/icId2x.png")}
             width="95%"
             placeholder=" 강아지 ID "
             conatinerStyle={{ marginBottom: 13 }}
@@ -112,7 +113,7 @@ export default class OrgRegisterDog extends React.Component {
             onChange={text => {
               this.setState({
                 json: {
-                dogId: text
+                  dogId: text
                 }
               });
             }}
@@ -122,7 +123,9 @@ export default class OrgRegisterDog extends React.Component {
           <RoundButton
             title={"등록하기"}
             styleContainer={{
-              width: '95%', borderRadius: 5, backgroundColor: "#a38686",
+              width: "95%",
+              borderRadius: 5,
+              backgroundColor: "#a38686"
             }}
             onPress={() => {
               this.RegisterDog().then(result => {
@@ -136,7 +139,12 @@ export default class OrgRegisterDog extends React.Component {
           />
           <RoundButton
             title={"비문으로 등록하기"}
-            styleContainer={{ width: '95%', borderRadius: 5, backgroundColor: "#f1cf81", marginTop:8}}
+            styleContainer={{
+              width: "95%",
+              borderRadius: 5,
+              backgroundColor: "#f1cf81",
+              marginTop: 8
+            }}
             onPress={() => {
               this._pickImage().then(() => {
                 console.log(this.state.id);
@@ -165,8 +173,10 @@ export default class OrgRegisterDog extends React.Component {
                 fontSize: 17,
                 color: "#a38686",
                 textDecorationLine: "underline"
-              }}>
-              등록된 강아지 리스트</Text>
+              }}
+            >
+              등록된 강아지 리스트
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -181,23 +191,22 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: width,
-    height: height *0.37,
+    height: height * 0.37
   },
   inputContainer: {
     top: "10%",
     alignItems: "center",
     justifyContent: "center",
-    width: "90%",
+    width: "90%"
   },
   buttonContainer: {
     top: "12%",
-    width: '90%',
-    alignItems: 'center',
-
+    width: "90%",
+    alignItems: "center"
   },
   textContainer: {
     top: "17%",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   }
 });

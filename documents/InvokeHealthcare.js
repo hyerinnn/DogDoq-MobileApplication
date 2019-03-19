@@ -112,7 +112,7 @@ export default class Healthcare extends React.Component {
   }
   invokeHealthcare() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/invoke",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/invoke",
       {
         method: "POST",
         body: JSON.stringify({
@@ -128,13 +128,13 @@ export default class Healthcare extends React.Component {
       .then(_bodyInit => JSON.parse(_bodyInit).code);
   }
   static navigationOptions = {
-    title: 'DOGDOQ',
-    headerTitleStyle: { flex: 1, textAlign: 'center' },
+    title: "DOGDOQ",
+    headerTitleStyle: { flex: 1, textAlign: "center" },
     headerStyle: {
-      backgroundColor: '#f1cf81'
+      backgroundColor: "#f1cf81"
     },
-    headerTintColor: '#fff'
-  }
+    headerTintColor: "#fff"
+  };
   render() {
     const kind = this.props.navigation.getParam("org");
     const email = this.props.navigation.getParam("email");
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   },
   question: {
     width: "27%",
-    alignItems: "center",
+    alignItems: "center"
   },
   buttonView: {
     flex: 1,
@@ -251,15 +251,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 20
-
   },
   buttonConfirm: {
     borderRadius: 10,
     backgroundColor: "#a38686",
     borderColor: "#BDBDBD",
     borderWidth: 1,
-    width: width*0.26,
-    height: height*0.13,
+    width: width * 0.26,
+    height: height * 0.13,
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column"

@@ -12,12 +12,7 @@ import {
   FlatList,
   Image
 } from "react-native";
-import {
-  Foundation,
-  MaterialCommunityIcons,
-  Entypo,
-  AntDesign
-} from "@expo/vector-icons";
+
 
 import uuidv1 from "uuid/v1";
 import moment from "moment";

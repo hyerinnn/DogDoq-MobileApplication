@@ -11,7 +11,7 @@ import {
   Dimensions
 } from "react-native";
 import Sales from "./Sales";
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 import ImageTextInput2 from "../components/ImageTextInput2";
 const { height, width } = Dimensions.get("window");
 
@@ -87,7 +87,7 @@ export default class QuerySales extends React.Component {
   }
   queryContract() {
     return fetch(
-      "http://192.168.43.166:3001/api/" + this.state.json.kind + "/query",
+      "http://192.168.43.185:3001/api/" + this.state.json.kind + "/query",
       {
         method: "POST",
         body: JSON.stringify({
@@ -106,11 +106,9 @@ export default class QuerySales extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerStyle: {
-        backgroundColor: '#f1cf81'
+        backgroundColor: "#f1cf81"
       },
-      headerLeft: (
-        <View></View>
-      ),
+      headerLeft: <View />,
       headerTitle: (
         <TouchableOpacity
           style={{
@@ -119,12 +117,12 @@ export default class QuerySales extends React.Component {
             justifyContent: "center"
           }}
         >
-          <Text style={{ fontSize: 20, color: '#fff', fontWeight: "bold" }} >DOGDOQ</Text>
+          <Text style={{ fontSize: 20, color: "#fff", fontWeight: "bold" }}>
+            DOGDOQ
+          </Text>
         </TouchableOpacity>
       ),
-      headerRight: (
-        <View></View>
-      ),
+      headerRight: <View />
     };
   };
   render() {
@@ -159,14 +157,23 @@ export default class QuerySales extends React.Component {
                 this.splitData(result.utf8);
               })
             }
-          ><Text style={{ color: "white" }}>검색</Text>
+          >
+            <Text style={{ color: "white" }}>검색</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.button, { mariginLeft: 2, justifyContent: "center", alignItems: "center", backgroundColor: "#fff" }]}
+            style={[
+              styles.button,
+              {
+                mariginLeft: 2,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#fff"
+              }
+            ]}
           >
             <AntDesign name={"printer"} size={30} />
           </TouchableOpacity>
-        </View>   
+        </View>
         <ScrollView>
           <Sales
             data0={this.state.str[0]}
@@ -205,11 +212,11 @@ const styles = StyleSheet.create({
     height: "90%",
     width: "13%",
     marginTop: 6,
-    marginRight: 4,
+    marginRight: 4
   },
   inputView: {
     height: height * 0.075,
     flexDirection: "row",
     justifyContent: "center"
-  },
+  }
 });

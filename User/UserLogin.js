@@ -5,7 +5,7 @@ import {
   Text,
   KeyboardAvoidingView,
   Image,
-  Dimensions,
+  Dimensions
 } from "react-native";
 import ImageTextInput from "../components/ImageTextInput";
 import RoundButton from "../components/RoundButton";
@@ -23,7 +23,7 @@ export default class OrgLogin extends React.Component {
       }
     };
   }
-  _loginPress (){
+  _loginPress() {
     this.LoginUser().then(result => {
       if (result == 200) {
         this.myDog()
@@ -46,7 +46,7 @@ export default class OrgLogin extends React.Component {
   }
 
   LoginUser() {
-    return fetch("http://192.168.43.166:3001/api/login", {
+    return fetch("http://192.168.43.185:3001/api/login", {
       method: "POST",
       body: JSON.stringify({
         ...this.state.data
@@ -61,7 +61,7 @@ export default class OrgLogin extends React.Component {
   }
 
   myDog() {
-    return fetch("http://192.168.43.166:3001/api/mydog", {
+    return fetch("http://192.168.43.185:3001/api/mydog", {
       method: "POST",
       body: JSON.stringify({
         ...this.state.data
@@ -78,13 +78,16 @@ export default class OrgLogin extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.logo} source={require('../assets/images/icLogo3.png')}/>
+        <Image
+          style={styles.logo}
+          source={require("../assets/images/icLogo3.png")}
+        />
         <View style={styles.inputContainer}>
           <ImageTextInput
-            image={require('../assets/images/icUser2x.png')}
+            image={require("../assets/images/icUser2x.png")}
             width="100%"
             placeholder=" ID "
-            conatinerStyle={{marginBottom: 13}}
+            conatinerStyle={{ marginBottom: 13 }}
             onChange={text => {
               this.setState({
                 data: {
@@ -95,7 +98,7 @@ export default class OrgLogin extends React.Component {
             }}
           />
           <ImageTextInput
-            image={require('../assets/images/icPassword2x.png')}
+            image={require("../assets/images/icPassword2x.png")}
             width="100%"
             placeholder=" PASSWORD  "
             onChange={text => {
@@ -112,15 +115,15 @@ export default class OrgLogin extends React.Component {
           <RoundButton
             title={"Log in"}
             styleContainer={{
-              width: '100%',
+              width: "100%"
             }}
-            onPress={()=>this._loginPress()}
+            onPress={() => this._loginPress()}
           />
           <RoundButton
             title={"Sign Up"}
             styleContainer={{
-              marginTop: 13, 
-              width: '100%', 
+              marginTop: 13,
+              width: "100%",
               backgroundColor: "#a38686"
             }}
             onPress={() => this.props.navigation.navigate("userregister")}
@@ -134,12 +137,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "flex-start"
   },
   logo: {
     width: width * 0.6,
     height: height * 0.375,
-    top: "3%",
+    top: "3%"
   },
   inputContainer: {
     top: "10%",
@@ -149,7 +152,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     top: "17%",
-    width: '90%',
-    alignItems: 'center',
+    width: "90%",
+    alignItems: "center"
   }
 });
