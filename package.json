@@ -7,6 +7,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@expo/vector-icons": "^10.0.0",
     "@qudian_mobile/qd-react-native-snap-carousel": "^0.1.2",
     "expo": "^32.0.0",
@@ -14,29 +15,18 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-drawer": "^2.5.1",
     "react-native-drawer-menu": "^0.2.5",
-    "react-native-vector-icons": "^4.4.0",
     "react-native-elements": "^1.0.0",
     "react-native-md5": "^1.0.0",
     "react-native-snap-carousel": "^3.7.5",
     "react-native-swiper": "^1.5.14",
     "react-native-swiper-flatlist": "^1.0.9",
+    "react-native-vector-icons": "^4.4.0",
     "react-native-xml2js": "^1.0.3",
     "react-navigation": "^3.0.9",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "5.1.0",
-    "eslint-config-fb-strict": "22.1.0",
-    "eslint-config-fbjs": "2.0.1",
-    "eslint-plugin-eslint-comments": "^3.0.1",
-    "eslint-plugin-flowtype": "2.43.0",
-    "eslint-plugin-jest": "21.8.0",
-    "eslint-plugin-prettier": "2.6.0",
-    "eslint-plugin-react": "7.8.2",
-    "eslint-plugin-react-native": "3.5.0",
-    "prettier": "1.13.6"
+    "babel-preset-expo": "^5.0.0"
   },
   "private": true
 }
